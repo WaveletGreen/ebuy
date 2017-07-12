@@ -1,4 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags"%>
+
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -22,8 +24,15 @@
 			<img src="images/logo.gif" />
 		</div>
 		<div class="help">
-			<a href="#" class="shopping">购物车</a><a href="login.jsp">登录</a><a
-				href="register.html">注册</a><a href="guestbook.html">留言</a>
+			<a href="#" class="shopping">购物车</a>
+			<s:if test="user==null">
+				<a href="login.jsp">登录</a>
+				<a href="register.jsp">注册</a>
+			</s:if>
+			<s:else>
+				<a href="#"> <s:property value="user.username" /> </a>
+			</s:else>
+			<a href="guestbook.html">留言</a>
 		</div>
 		<div class="navbar">
 			<ul class="clearfix">
@@ -162,8 +171,7 @@
 						<dl>
 							<dt>
 								<a href="product-view.html" target="_blank"><img
-									src="images/product/1.jpg" />
-								</a>
+									src="images/product/1.jpg" /> </a>
 							</dt>
 							<dd class="title">
 								<a href="product-view.html" target="_blank">法国德菲丝松露精品巧克力500g/盒</a>
@@ -174,8 +182,7 @@
 						<dl>
 							<dt>
 								<a href="product-view.html" target="_blank"><img
-									src="images/product/2.jpg" />
-								</a>
+									src="images/product/2.jpg" /> </a>
 							</dt>
 							<dd class="title">
 								<a href="product-view.html" target="_blank">乐扣普通型保鲜盒圣诞7件套</a>
@@ -186,8 +193,7 @@
 						<dl>
 							<dt>
 								<a href="product-view.html" target="_blank"><img
-									src="images/product/3.jpg" />
-								</a>
+									src="images/product/3.jpg" /> </a>
 							</dt>
 							<dd class="title">
 								<a href="product-view.html" target="_blank">欧珀莱均衡保湿四件套</a>
@@ -198,8 +204,7 @@
 						<dl>
 							<dt>
 								<a href="product-view.html" target="_blank"><img
-									src="images/product/4.jpg" />
-								</a>
+									src="images/product/4.jpg" /> </a>
 							</dt>
 							<dd class="title">
 								<a href="product-view.html" target="_blank">联想笔记本电脑 高速独立显存</a>
@@ -210,8 +215,7 @@
 						<dl>
 							<dt>
 								<a href="product-view.html" target="_blank"><img
-									src="images/product/5.jpg" />
-								</a>
+									src="images/product/5.jpg" /> </a>
 							</dt>
 							<dd class="title">
 								<a href="product-view.html" target="_blank">法姿韩版显瘦彩边时尚牛仔铅笔裤</a>
@@ -222,8 +226,7 @@
 						<dl>
 							<dt>
 								<a href="product-view.html" target="_blank"><img
-									src="images/product/6.jpg" />
-								</a>
+									src="images/product/6.jpg" /> </a>
 							</dt>
 							<dd class="title">
 								<a href="product-view.html" target="_blank">Genius925纯银施华洛世奇水晶吊坠</a>
@@ -234,8 +237,7 @@
 						<dl>
 							<dt>
 								<a href="product-view.html" target="_blank"><img
-									src="images/product/7.jpg" />
-								</a>
+									src="images/product/7.jpg" /> </a>
 							</dt>
 							<dd class="title">
 								<a href="product-view.html" target="_blank">利仁2018M福满堂电饼铛
@@ -247,8 +249,7 @@
 						<dl>
 							<dt>
 								<a href="product-view.html" target="_blank"><img
-									src="images/product/8.jpg" />
-								</a>
+									src="images/product/8.jpg" /> </a>
 							</dt>
 							<dd class="title">
 								<a href="product-view.html" target="_blank">达派高档拉杆箱20寸 经典款式</a>
@@ -306,8 +307,7 @@
 						<dl>
 							<dt>
 								<a href="product-view.html" target="_blank"><img
-									src="images/product/1.jpg" />
-								</a>
+									src="images/product/1.jpg" /> </a>
 							</dt>
 							<dd class="title">
 								<a href="product-view.html" target="_blank">法国德菲丝松露精品巧克力500g/盒</a>
@@ -318,8 +318,7 @@
 						<dl>
 							<dt>
 								<a href="product-view.html" target="_blank"><img
-									src="images/product/2.jpg" />
-								</a>
+									src="images/product/2.jpg" /> </a>
 							</dt>
 							<dd class="title">
 								<a href="product-view.html" target="_blank">乐扣普通型保鲜盒圣诞7件套</a>
@@ -330,8 +329,7 @@
 						<dl>
 							<dt>
 								<a href="product-view.html" target="_blank"><img
-									src="images/product/3.jpg" />
-								</a>
+									src="images/product/3.jpg" /> </a>
 							</dt>
 							<dd class="title">
 								<a href="product-view.html" target="_blank">欧珀莱均衡保湿四件套</a>
@@ -342,8 +340,7 @@
 						<dl>
 							<dt>
 								<a href="product-view.html" target="_blank"><img
-									src="images/product/4.jpg" />
-								</a>
+									src="images/product/4.jpg" /> </a>
 							</dt>
 							<dd class="title">
 								<a href="product-view.html" target="_blank">联想笔记本电脑 高速独立显存</a>
@@ -354,8 +351,7 @@
 						<dl>
 							<dt>
 								<a href="product-view.html" target="_blank"><img
-									src="images/product/5.jpg" />
-								</a>
+									src="images/product/5.jpg" /> </a>
 							</dt>
 							<dd class="title">
 								<a href="product-view.html" target="_blank">法姿韩版显瘦彩边时尚牛仔铅笔裤</a>
@@ -366,8 +362,7 @@
 						<dl>
 							<dt>
 								<a href="product-view.html" target="_blank"><img
-									src="images/product/6.jpg" />
-								</a>
+									src="images/product/6.jpg" /> </a>
 							</dt>
 							<dd class="title">
 								<a href="product-view.html" target="_blank">Genius925纯银施华洛世奇水晶吊坠</a>
@@ -378,8 +373,7 @@
 						<dl>
 							<dt>
 								<a href="product-view.html" target="_blank"><img
-									src="images/product/7.jpg" />
-								</a>
+									src="images/product/7.jpg" /> </a>
 							</dt>
 							<dd class="title">
 								<a href="product-view.html" target="_blank">利仁2018M福满堂电饼铛
@@ -391,8 +385,7 @@
 						<dl>
 							<dt>
 								<a href="product-view.html" target="_blank"><img
-									src="images/product/8.jpg" />
-								</a>
+									src="images/product/8.jpg" /> </a>
 							</dt>
 							<dd class="title">
 								<a href="product-view.html" target="_blank">达派高档拉杆箱20寸 经典款式</a>
@@ -403,8 +396,7 @@
 						<dl>
 							<dt>
 								<a href="product-view.html" target="_blank"><img
-									src="images/product/9.jpg" />
-								</a>
+									src="images/product/9.jpg" /> </a>
 							</dt>
 							<dd class="title">
 								<a href="product-view.html" target="_blank">爱国者MP4 全屏触摸多格式播放
@@ -416,8 +408,7 @@
 						<dl>
 							<dt>
 								<a href="product-view.html" target="_blank"><img
-									src="images/product/10.jpg" />
-								</a>
+									src="images/product/10.jpg" /> </a>
 							</dt>
 							<dd class="title">
 								<a href="product-view.html" target="_blank">多美滋金装金盾3阶段幼儿配方奶粉</a>
@@ -428,8 +419,7 @@
 						<dl>
 							<dt>
 								<a href="product-view.html" target="_blank"><img
-									src="images/product/1.jpg" />
-								</a>
+									src="images/product/1.jpg" /> </a>
 							</dt>
 							<dd class="title">
 								<a href="product-view.html" target="_blank">法国德菲丝松露精品巧克力500g/盒</a>
@@ -440,8 +430,7 @@
 						<dl>
 							<dt>
 								<a href="product-view.html" target="_blank"><img
-									src="images/product/2.jpg" />
-								</a>
+									src="images/product/2.jpg" /> </a>
 							</dt>
 							<dd class="title">
 								<a href="product-view.html" target="_blank">乐扣普通型保鲜盒圣诞7件套</a>

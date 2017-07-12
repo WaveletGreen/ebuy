@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
-
+	<package name="fanc" namespace="/" extends="struts-default">
+		<action name="common_*_*_*_*" class="action.{1}" method="{2}">
+			<result name="success">
+				/{3}.jsp
+			</result>
+			<result name="input">
+				/{4}.jsp
+			</result>
+		</action>
+	</package>
 </struts>    

@@ -17,5 +17,5 @@ public interface UserDao {
 	 * 
 	 * @return
 	 */
-	public String regist();
+	public String regist(TUser user);
 }
