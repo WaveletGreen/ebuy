@@ -3,6 +3,7 @@
     <wb-module deploy-name="ebuy">
         <wb-resource deploy-path="/" source-path="/WebRoot"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/test"/>
         <property name="context-root" value="/ebuy"/>
         <property name="java-output-path" value="/ebuy/WebRoot/WEB-INF/classes"/>
     </wb-module>
