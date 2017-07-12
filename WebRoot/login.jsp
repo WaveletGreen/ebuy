@@ -78,7 +78,7 @@
 						<tr>
 							<td class="field">登录密码：</td>
 							<td><input class="text" type="password" id="passWord"
-								name="user.passWord" onfocus="FocusItem(this)"
+								name="user.password" onfocus="FocusItem(this)"
 								onblur="CheckItem(this);" /><span></span></td>
 						</tr>
 						<tr>

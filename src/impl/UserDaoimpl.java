@@ -22,7 +22,7 @@ public class UserDaoimpl implements UserDao {
 			Query query = session
 					.createQuery("from TUser where username=:username and password=:password");
 			query.setString("username", user.getUsername());
-			query.setString("username", user.getPassword());
+			query.setString("password", user.getPassword());
 			// 为了回显，不能直接将传进来user改掉，除非成功才能改
 			TUser user2 = (TUser) query.uniqueResult();
 			if (user2 != null) {
