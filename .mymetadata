@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="ebuy"
+  id="myeclipse.1499830600172"
+  context-root="/ebuy"
+  j2ee-spec="6.0"
+  archive="ebuy.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
