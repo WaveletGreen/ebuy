@@ -2,6 +2,12 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<package name="fanc" namespace="/" extends="struts-default">
+		<global-results>
+			<result name="error">
+				/error.jsp
+			</result>
+		</global-results>
+		<!-- 初始化工作 -->
 		<action name="init" class="action.ProcductCommon" method="init">
 			<result>
 				/index.jsp

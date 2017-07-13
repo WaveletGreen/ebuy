@@ -1,10 +1,8 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
-
 <%
 	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://"
-			+ request.getServerName() + ":" + request.getServerPort()
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 %>
 
@@ -30,7 +28,8 @@
 				<a href="register.jsp">注册</a>
 			</s:if>
 			<s:else>
-				<a href="#"> <s:property value="user.username" /> </a>
+				<a href="#"> <s:property value="user.username" />
+				</a>
 			</s:else>
 			<a href="guestbook.html">留言</a>
 		</div>
@@ -144,17 +143,24 @@
 		</div>
 		<div class="main">
 			<div class="price-off">
-				<h2>今日特价</h2>
+				<h2>
+					<a
+						href="common_ProcductCommon_viewAll_product-list_error.action?type=TProduct">今日特价</a>
+				</h2>
 				<ul class="product clearfix">
 					<s:iterator value="products" var="p" begin="0" end="7" step="1">
 						<li>
 							<dl>
 								<dt>
-									<a href="product-view.html" target="_blank"><img
-										src='<s:property value="#p.proPic"/>' /> </a>
+									<a
+										href="common_ViewerCommon_view_product-view_index.action?type=TProduct&product.id=<s:property value='#p.id'/>"
+										target="_blank"><img src='<s:property value="#p.proPic"/>' />
+									</a>
 								</dt>
 								<dd class="title">
-									<a href="product-view.html" target="_blank">法国德菲丝松露精品巧克力500g/盒</a>
+									<a
+										href="common_ViewerCommon_view_product-view_index.action?type=TProduct&product.id=<s:property value='#p.id'/>"
+										target="_blank"><s:property value="#p.name" /></a>
 								</dd>
 								<dd class="price">
 									￥

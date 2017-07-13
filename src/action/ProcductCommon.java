@@ -19,6 +19,15 @@ public class ProcductCommon extends ActionSupport {
 	private List<TNews> news;
 	private List<TNotice> notices;
 	private List<TProduct> products;
+	private String type;
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
 
 	public List<TNews> getNews() {
 		return news;
@@ -50,9 +59,33 @@ public class ProcductCommon extends ActionSupport {
 	 * @return
 	 */
 	public String init() {
-		news=dao.findAllItem("TNews");
-		notices=dao.findAllItem("TNotice");
-		products=dao.findAllItem("TProduct");
+		news = dao.findAllItem("TNews");
+		notices = dao.findAllItem("TNotice");
+		products = dao.findAllItem("TProduct");
 		return SUCCESS;
+	}
+
+	public String viewAll() {
+		SimpleFactory();
+		return SUCCESS;
+	}
+
+	/**
+	 * 简单工厂生产对应的对象，因为目前无法根据名字强制转换为对象，因此先用简单工厂
+	 * 
+	 * 如 product = (type) dao.getById(type, product.getId());
+	 */
+	private void SimpleFactory() {
+		switch (type) {
+		case "TProduct":
+			products = dao.findAllItem("TProduct");
+			break;
+		case "TNews":
+			news = dao.findAllItem("TNews");
+			break;
+		case "TNotice":
+			notices = dao.findAllItem("TNotice");
+			break;
+		}
 	}
 }
