@@ -8,7 +8,7 @@
 			</result>
 		</global-results>
 		<!-- 初始化工作 -->
-		<action name="init" class="action.ProcductCommon" method="init">
+		<action name="init" class="action.ProductCommon" method="init">
 			<result>
 				/index.jsp
 			</result>

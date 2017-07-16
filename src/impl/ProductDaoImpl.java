@@ -48,16 +48,16 @@ public class ProductDaoImpl<T> implements ProductDao<T> {
 	public List<TProduct> getByTags(TProduct product, int startPage, int maxResult) {
 		StringBuffer hql = new StringBuffer().append("from TProduct tp where 1=1 ");
 		if (product.getHot() != null) {
+			hql.append("and tp.hot=:hot ");
 		}
-		hql.append("and tp.hot=:hot");
 		if (product.getSpecialPrice() != null) {
-			hql.append("and tp.specialPrice=:specialPrice");
+			hql.append("and tp.specialPrice=:specialPrice ");
 		}
 		if (product.getTBigtype() != null) {
-			hql.append("and tp.TBigtype.id=:bigTypeId");
+			hql.append("and tp.TBigtype.id=:bigTypeId ");
 		}
 		if (product.getTSmalltype() != null) {
-			hql.append("and tp.TSmalltype.id=:smallTypeId");
+			hql.append("and tp.TSmalltype.id=:smallTypeId ");
 
 		}
 		Query query = session.createQuery(hql.toString());

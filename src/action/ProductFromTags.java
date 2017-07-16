@@ -52,8 +52,10 @@ public class ProductFromTags extends ActionSupport {
 	}
 
 	public String getByTags() {
+		System.out.println(this.product.getTBigtype().getId());
 		products = dao.getByTags(this.product, page.getPageIndex(), page.getMaxResult());
 		maxResult = products.size();
+		System.out.println("-----------"+maxResult);
 		int maxPage = maxResult % page.getMaxResult() == 0 ? maxResult / page.getMaxResult()
 				: maxResult / page.getMaxResult() + 1;
 		// 在这里设置page的属性是为了方便在页面上控制分页查询
