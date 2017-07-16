@@ -6,12 +6,20 @@ public class Page {
 	private int totalPages;
 	private int prePageIndex;
 	private int nextPageIndex;
+	private int maxResult;
 
 	public Page() {
 	}
 
-	public Page(int pageIndex, int totalPages, int prePageIndex,
-			int nextPageIndex) {
+	public Page(int pageIndex, int totalPages, int prePageIndex, int nextPageIndex) {
+	}
+
+	public int getMaxResult() {
+		return maxResult;
+	}
+
+	public void setMaxResult(int maxResult) {
+		this.maxResult = maxResult;
 	}
 
 	public int getPageIndex() {
@@ -53,4 +61,25 @@ public class Page {
 		}
 	}
 
+	/**
+	 * 根据传入的当前页自动设置上一页和下一页的索引，totalPage需要手动传入
+	 * 
+	 * @param pageIndex
+	 *            当前页数
+	 * @param totalPages
+	 *            最大页数
+	 */
+
+	public void autoSetter(int pageIndex, int totalPages) {
+		this.totalPages = totalPages;
+		this.prePageIndex = pageIndex - 1;
+
+		if (this.prePageIndex+1 <= 0) {
+			this.prePageIndex = pageIndex;
+		}
+		this.nextPageIndex = pageIndex + 1;
+		if (this.nextPageIndex > totalPages) {
+			this.nextPageIndex = totalPages;
+		}
+	}
 }

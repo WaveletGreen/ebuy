@@ -145,7 +145,7 @@
 			<div class="price-off">
 				<h2>
 					<a
-						href="common_ProcductCommon_viewAll_product-list_error.action?type=TProduct">今日特价</a>
+						href="common_ProcductCommon_viewByPage_product-list_error.action?type=TProduct&page.pageIndex=0&page.maxResult=12">今日特价</a>
 				</h2>
 				<ul class="product clearfix">
 					<s:iterator value="products" var="p" begin="0" end="7" step="1">

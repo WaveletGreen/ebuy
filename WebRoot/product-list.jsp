@@ -143,20 +143,52 @@
 		<div class="main">
 			<div class="product-list">
 				<h2>全部商品</h2>
+				<s:property value="page.nextPageIndex" />
+				<s:property value="page.totalPages" />
+
 				<div class="pager">
 					<ul class="clearfix">
-						<li><a href="#">上一页</a></li>
-						<li class="current">1</li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li>
-						<li><a href="#">下一页</a></li>
+						<!-- 					上一页 -->
+						<s:if test="page.prePageIndex!=page.pageIndex">
+							<li><a
+								href="common_ProcductCommon_viewByPage_product-list_error.action?type=TProduct&page.pageIndex=<s:property value="page.prePageIndex"/>&page.maxResult=12">上一页</a></li>
+						</s:if>
+						<!-- 						上上一页 -->
+						<s:if test="page.pageIndex-1>0">
+							<li><a
+								href="common_ProcductCommon_viewByPage_product-list_error.action?type=TProduct&page.pageIndex=<s:property value="page.prePageIndex-1"/>&page.maxResult=12"><s:property
+										value="page.pageIndex-1" /></a></li>
+						</s:if>
+						<!-- 						上一页 -->
+						<s:if test="page.pageIndex-1>=0">
+							<li><a
+								href="common_ProcductCommon_viewByPage_product-list_error.action?type=TProduct&page.pageIndex=<s:property value="page.prePageIndex"/>&page.maxResult=12"><s:property
+										value="page.pageIndex" /></a></li>
+						</s:if>
+						<!-- 						当前页 -->
+						<li class="current"><s:property value="page.pageIndex+1" /></li>
+						<!-- 						下一页 -->
+						<s:if test="page.pageIndex+1<=page.totalPages">
+							<li><a
+								href="common_ProcductCommon_viewByPage_product-list_error.action?type=TProduct&page.pageIndex=<s:property value="page.nextPageIndex"/>&page.maxResult=12"><s:property
+										value="page.nextPageIndex+1" /></a></li>
+						</s:if>
+						<!-- 						下下一页 -->
+						<s:if test="page.pageIndex+1<page.totalPages">
+							<li><a
+								href="common_ProcductCommon_viewByPage_product-list_error.action?type=TProduct&page.pageIndex=<s:property value="page.nextPageIndex+1"/>&page.maxResult=12"><s:property
+										value="page.nextPageIndex+2" /></a></li>
+						</s:if>
+						<!-- 						下一页 -->
+						<s:if test="page.nextPageIndex>page.pageIndex">
+							<li><a
+								href="common_ProcductCommon_viewByPage_product-list_error.action?type=TProduct&page.pageIndex=<s:property value="page.nextPageIndex"/>&page.maxResult=12">下一页</a></li>
+						</s:if>
 					</ul>
 				</div>
 				<div class="clear"></div>
 				<ul class="product clearfix">
-					<s:iterator value="products" var="p" begin="0" end="11" step="1">
+					<s:iterator value="products" var="p">
 						<li>
 							<dl>
 								<dt>
@@ -181,13 +213,42 @@
 				<div class="clear"></div>
 				<div class="pager">
 					<ul class="clearfix">
-						<li><a href="#">上一页</a></li>
-						<li class="current">1</li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li>
-						<li><a href="#">下一页</a></li>
+						<!-- 					上一页 -->
+						<s:if test="page.prePageIndex!=page.pageIndex">
+							<li><a
+								href="common_ProcductCommon_viewByPage_product-list_error.action?type=TProduct&page.pageIndex=<s:property value="page.prePageIndex"/>&page.maxResult=12">上一页</a></li>
+						</s:if>
+						<!-- 						上上一页 -->
+						<s:if test="page.pageIndex-1>0">
+							<li><a
+								href="common_ProcductCommon_viewByPage_product-list_error.action?type=TProduct&page.pageIndex=<s:property value="page.prePageIndex-1"/>&page.maxResult=12"><s:property
+										value="page.pageIndex-1" /></a></li>
+						</s:if>
+						<!-- 						上一页 -->
+						<s:if test="page.pageIndex-1>=0">
+							<li><a
+								href="common_ProcductCommon_viewByPage_product-list_error.action?type=TProduct&page.pageIndex=<s:property value="page.prePageIndex"/>&page.maxResult=12"><s:property
+										value="page.pageIndex" /></a></li>
+						</s:if>
+						<!-- 						当前页 -->
+						<li class="current"><s:property value="page.pageIndex+1" /></li>
+						<!-- 						下一页 -->
+						<s:if test="page.pageIndex+1<=page.totalPages">
+							<li><a
+								href="common_ProcductCommon_viewByPage_product-list_error.action?type=TProduct&page.pageIndex=<s:property value="page.nextPageIndex"/>&page.maxResult=12"><s:property
+										value="page.nextPageIndex+1" /></a></li>
+						</s:if>
+						<!-- 						下下一页 -->
+						<s:if test="page.pageIndex+1<page.totalPages">
+							<li><a
+								href="common_ProcductCommon_viewByPage_product-list_error.action?type=TProduct&page.pageIndex=<s:property value="page.nextPageIndex+1"/>&page.maxResult=12"><s:property
+										value="page.nextPageIndex+2" /></a></li>
+						</s:if>
+						<!-- 						下一页 -->
+						<s:if test="page.nextPageIndex>page.pageIndex">
+							<li><a
+								href="common_ProcductCommon_viewByPage_product-list_error.action?type=TProduct&page.pageIndex=<s:property value="page.nextPageIndex"/>&page.maxResult=12">下一页</a></li>
+						</s:if>
 					</ul>
 				</div>
 			</div>

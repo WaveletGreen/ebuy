@@ -8,6 +8,12 @@ import entity.TNotice;
 import entity.TProduct;
 import impl.ProductDaoImpl;
 
+/**
+ * 查询单个信息的类，要查询列表请从ProductCommon获取
+ * 
+ * @author Administrator
+ *
+ */
 @SuppressWarnings("unchecked")
 public class ViewerCommon extends ActionSupport {
 	private static final long serialVersionUID = -1748415403701909737L;
