@@ -10,6 +10,8 @@ import entity.TUser;
 
 public class UserCommon extends ActionSupport {
 
+	private static final long serialVersionUID = 2939523652393343997L;
+
 	private UserDao dao = new UserDaoimpl();
 
 	private TUser user;

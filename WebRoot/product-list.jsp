@@ -143,9 +143,6 @@
 		<div class="main">
 			<div class="product-list">
 				<h2>全部商品</h2>
-				<s:property value="page.nextPageIndex" />
-				<s:property value="page.totalPages" />
-
 				<div class="pager">
 					<ul class="clearfix">
 						<!-- 					上一页 -->

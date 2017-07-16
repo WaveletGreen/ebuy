@@ -52,7 +52,8 @@
 				<li><a href="#">动漫</a></li>
 				<li><a href="#">小说</a></li>
 				<li><a href="#">外语</a></li>
-				<li><a href="#">数码相机</a></li>
+				<li><a
+					href="common_ProductFromTags_getByTags_product-list_error.action?product.TBigtype.id=2&page.pageIndex=0&page.maxResult=12">数码相机</a></li>
 				<li><a href="#">笔记本</a></li>
 				<li><a href="#">羽绒服</a></li>
 				<li><a href="#">秋冬靴</a></li>
@@ -148,26 +149,28 @@
 						href="common_ProcductCommon_viewByPage_product-list_error.action?type=TProduct&page.pageIndex=0&page.maxResult=12">今日特价</a>
 				</h2>
 				<ul class="product clearfix">
-					<s:iterator value="products" var="p" begin="0" end="7" step="1">
-						<li>
-							<dl>
-								<dt>
-									<a
-										href="common_ViewerCommon_view_product-view_index.action?type=TProduct&product.id=<s:property value='#p.id'/>"
-										target="_blank"><img src='<s:property value="#p.proPic"/>' />
-									</a>
-								</dt>
-								<dd class="title">
-									<a
-										href="common_ViewerCommon_view_product-view_index.action?type=TProduct&product.id=<s:property value='#p.id'/>"
-										target="_blank"><s:property value="#p.name" /></a>
-								</dd>
-								<dd class="price">
-									￥
-									<s:property value="#p.price" />
-								</dd>
-							</dl>
-						</li>
+					<s:iterator value="products" var="p">
+						<s:if test="#p.specialPrice==1">
+							<li>
+								<dl>
+									<dt>
+										<a
+											href="common_ViewerCommon_view_product-view_index.action?type=TProduct&product.id=<s:property value='#p.id'/>"
+											target="_blank"><img
+											src='<s:property value="#p.proPic"/>' /> </a>
+									</dt>
+									<dd class="title">
+										<a
+											href="common_ViewerCommon_view_product-view_index.action?type=TProduct&product.id=<s:property value='#p.id'/>"
+											target="_blank"><s:property value="#p.name" /></a>
+									</dd>
+									<dd class="price">
+										￥
+										<s:property value="#p.price" />
+									</dd>
+								</dl>
+							</li>
+						</s:if>
 					</s:iterator>
 				</ul>
 			</div>
@@ -196,152 +199,29 @@
 			<div class="hot">
 				<h2>热卖推荐</h2>
 				<ul class="product clearfix">
-					<li>
-						<dl>
-							<dt>
-								<a href="product-view.html" target="_blank"><img
-									src="images/product/1.jpg" /> </a>
-							</dt>
-							<dd class="title">
-								<a href="product-view.html" target="_blank">法国德菲丝松露精品巧克力500g/盒</a>
-							</dd>
-							<dd class="price">￥108.0</dd>
-						</dl>
-					</li>
-					<li>
-						<dl>
-							<dt>
-								<a href="product-view.html" target="_blank"><img
-									src="images/product/2.jpg" /> </a>
-							</dt>
-							<dd class="title">
-								<a href="product-view.html" target="_blank">乐扣普通型保鲜盒圣诞7件套</a>
-							</dd>
-							<dd class="price">￥69.90</dd>
-						</dl>
-					</li>
-					<li>
-						<dl>
-							<dt>
-								<a href="product-view.html" target="_blank"><img
-									src="images/product/3.jpg" /> </a>
-							</dt>
-							<dd class="title">
-								<a href="product-view.html" target="_blank">欧珀莱均衡保湿四件套</a>
-							</dd>
-							<dd class="price">￥279.0</dd>
-						</dl>
-					</li>
-					<li>
-						<dl>
-							<dt>
-								<a href="product-view.html" target="_blank"><img
-									src="images/product/4.jpg" /> </a>
-							</dt>
-							<dd class="title">
-								<a href="product-view.html" target="_blank">联想笔记本电脑 高速独立显存</a>
-							</dd>
-							<dd class="price">￥4199</dd>
-						</dl>
-					</li>
-					<li>
-						<dl>
-							<dt>
-								<a href="product-view.html" target="_blank"><img
-									src="images/product/5.jpg" /> </a>
-							</dt>
-							<dd class="title">
-								<a href="product-view.html" target="_blank">法姿韩版显瘦彩边时尚牛仔铅笔裤</a>
-							</dd>
-							<dd class="price">￥49.00</dd>
-						</dl>
-					</li>
-					<li>
-						<dl>
-							<dt>
-								<a href="product-view.html" target="_blank"><img
-									src="images/product/6.jpg" /> </a>
-							</dt>
-							<dd class="title">
-								<a href="product-view.html" target="_blank">Genius925纯银施华洛世奇水晶吊坠</a>
-							</dd>
-							<dd class="price">￥69.90</dd>
-						</dl>
-					</li>
-					<li>
-						<dl>
-							<dt>
-								<a href="product-view.html" target="_blank"><img
-									src="images/product/7.jpg" /> </a>
-							</dt>
-							<dd class="title">
-								<a href="product-view.html" target="_blank">利仁2018M福满堂电饼铛
-									好用实惠</a>
-							</dd>
-							<dd class="price">￥268.0</dd>
-						</dl>
-					</li>
-					<li>
-						<dl>
-							<dt>
-								<a href="product-view.html" target="_blank"><img
-									src="images/product/8.jpg" /> </a>
-							</dt>
-							<dd class="title">
-								<a href="product-view.html" target="_blank">达派高档拉杆箱20寸 经典款式</a>
-							</dd>
-							<dd class="price">￥198.0</dd>
-						</dl>
-					</li>
-					<li>
-						<dl>
-							<dt>
-								<a href="product-view.html" target="_blank"><img
-									src="images/product/9.jpg" /> </a>
-							</dt>
-							<dd class="title">
-								<a href="product-view.html" target="_blank">爱国者MP4 全屏触摸多格式播放
-									4G</a>
-							</dd>
-							<dd class="price">￥289.0</dd>
-						</dl>
-					</li>
-					<li>
-						<dl>
-							<dt>
-								<a href="product-view.html" target="_blank"><img
-									src="images/product/10.jpg" /> </a>
-							</dt>
-							<dd class="title">
-								<a href="product-view.html" target="_blank">多美滋金装金盾3阶段幼儿配方奶粉</a>
-							</dd>
-							<dd class="price">￥186.0</dd>
-						</dl>
-					</li>
-					<li>
-						<dl>
-							<dt>
-								<a href="product-view.html" target="_blank"><img
-									src="images/product/1.jpg" /> </a>
-							</dt>
-							<dd class="title">
-								<a href="product-view.html" target="_blank">法国德菲丝松露精品巧克力500g/盒</a>
-							</dd>
-							<dd class="price">￥108.0</dd>
-						</dl>
-					</li>
-					<li>
-						<dl>
-							<dt>
-								<a href="product-view.html" target="_blank"><img
-									src="images/product/2.jpg" /> </a>
-							</dt>
-							<dd class="title">
-								<a href="product-view.html" target="_blank">乐扣普通型保鲜盒圣诞7件套</a>
-							</dd>
-							<dd class="price">￥69.90</dd>
-						</dl>
-					</li>
+					<s:iterator value="products" var="p">
+						<s:if test="#p.hot==1">
+							<li>
+								<dl>
+									<dt>
+										<a
+											href="common_ViewerCommon_view_product-view_index.action?type=TProduct&product.id=<s:property value='#p.id'/>"
+											target="_blank"><img
+											src='<s:property value="#p.proPic"/>' /> </a>
+									</dt>
+									<dd class="title">
+										<a
+											href="common_ViewerCommon_view_product-view_index.action?type=TProduct&product.id=<s:property value='#p.id'/>"
+											target="_blank"><s:property value="#p.name" /></a>
+									</dd>
+									<dd class="price">
+										￥
+										<s:property value="#p.price" />
+									</dd>
+								</dl>
+							</li>
+						</s:if>
+					</s:iterator>
 				</ul>
 			</div>
 		</div>

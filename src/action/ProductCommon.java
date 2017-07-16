@@ -13,7 +13,7 @@ import entity.TNotice;
 import entity.TProduct;
 
 @SuppressWarnings({ "unchecked", "serial" })
-public class ProcductCommon extends ActionSupport {
+public class ProductCommon extends ActionSupport {
 	@SuppressWarnings("rawtypes")
 	private ProductDao dao = new ProductDaoImpl();
 
