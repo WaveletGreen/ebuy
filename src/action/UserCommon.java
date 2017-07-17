@@ -67,10 +67,14 @@ public class UserCommon extends ActionSupport implements ApplicationAware,
 		TUser user = dao.login(this.user);
 		if (user != null) {
 			session.put("user", user);
-			if (!application.containsKey("userList")) {
-				application.put("userList", new ArrayList<TUser>().add(user));
+			List<TUser> list = new ArrayList<TUser>();
+			if (application.containsKey("userList")) {
+				list = (List<TUser>) application.get("userList");
 			}
-
+			if (!list.contains("user")) {
+				list.add(user);
+			}
+			application.put("userList", list);
 			return "toIndex";
 		} else {
 			addFieldError("msg", "用户名或密码错误");
@@ -81,7 +85,8 @@ public class UserCommon extends ActionSupport implements ApplicationAware,
 	public String logout() {
 		if (session != null) {
 			if (application != null) {
-				((List<TUser>) application.get("userList")).remove(session.get("user"));
+				((List<TUser>) application.get("userList")).remove(session
+						.get("user"));
 			}
 			((HttpSession) session).invalidate();
 		}
