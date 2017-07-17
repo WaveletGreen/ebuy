@@ -1,5 +1,14 @@
 package action;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpSession;
+
+import org.apache.struts2.interceptor.ApplicationAware;
+import org.apache.struts2.interceptor.SessionAware;
+
 import impl.UserDaoimpl;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -14,8 +23,10 @@ import entity.TUser;
  * @author Administrator
  * 
  */
-public class UserCommon extends ActionSupport {
-
+public class UserCommon extends ActionSupport implements ApplicationAware,
+		SessionAware {
+	private Map<String, Object> session;
+	private Map<String, Object> application;
 	private static final long serialVersionUID = 2939523652393343997L;
 
 	private UserDao dao = new UserDaoimpl();
@@ -30,6 +41,22 @@ public class UserCommon extends ActionSupport {
 		this.user = user;
 	}
 
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
+
+	public Map<String, Object> getApplication() {
+		return application;
+	}
+
+	public void setApplication(Map<String, Object> application) {
+		this.application = application;
+	}
+
 	/**
 	 * 登录方法
 	 * 
@@ -38,12 +65,27 @@ public class UserCommon extends ActionSupport {
 
 	public String login() {
 		TUser user = dao.login(this.user);
-		if (user != null)
-			return SUCCESS;
-		else {
+		if (user != null) {
+			session.put("user", user);
+			if (!application.containsKey("userList")) {
+				application.put("userList", new ArrayList<TUser>().add(user));
+			}
+
+			return "toIndex";
+		} else {
 			addFieldError("msg", "用户名或密码错误");
 			return INPUT;
 		}
+	}
+
+	public String logout() {
+		if (session != null) {
+			if (application != null) {
+				((List<TUser>) application.get("userList")).remove(session.get("user"));
+			}
+			((HttpSession) session).invalidate();
+		}
+		return SUCCESS;
 	}
 
 	/**
@@ -56,4 +98,5 @@ public class UserCommon extends ActionSupport {
 		dao.regist(this.user);
 		return SUCCESS;
 	}
+
 }

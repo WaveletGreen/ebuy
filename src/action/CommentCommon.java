@@ -2,6 +2,8 @@ package action;
 
 import impl.ProductDaoImpl;
 
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -64,6 +66,7 @@ public class CommentCommon extends ActionSupport {
 	}
 
 	public String publishComment() {
+		comment.setCreateTime(new Timestamp(new Date().getTime()));
 		String result = (String) dao.save(comment);
 		getUserComment();
 		return result;

@@ -136,7 +136,7 @@
 								<dd class="author">
 									网友：
 									<s:property value="#cmt.nickName" />
-									<span class="timer"> <s:property value="#cmt.replyTime" />
+									<span class="timer"> <s:property value="#cmt.createTime" />
 									</span>
 								</dd>
 								<dd>

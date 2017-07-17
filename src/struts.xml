@@ -20,6 +20,9 @@
 			<result name="input">
 				/{4}.jsp
 			</result>
+			<result name="toIndex">
+				/index.html
+			</result>
 		</action>
 	</package>
 </struts>    
