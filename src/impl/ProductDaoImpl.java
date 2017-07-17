@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import util.HibernateSessionFactory;
 
@@ -45,8 +46,10 @@ public class ProductDaoImpl<T> implements ProductDao<T> {
 	}
 
 	@Override
-	public List<TProduct> getByTags(TProduct product, int startPage, int maxResult) {
-		StringBuffer hql = new StringBuffer().append("from TProduct tp where 1=1 ");
+	public List<TProduct> getByTags(TProduct product, int startPage,
+			int maxResult) {
+		StringBuffer hql = new StringBuffer()
+				.append("from TProduct tp where 1=1 ");
 		if (product.getHot() != null) {
 			hql.append("and tp.hot=:hot ");
 		}
@@ -77,6 +80,15 @@ public class ProductDaoImpl<T> implements ProductDao<T> {
 		query.setMaxResults(maxResult);
 		List<TProduct> items = query.list();
 		return items;
+	}
+
+	@Override
+	public T save(T t) {
+		Transaction tx = session.beginTransaction();
+		System.out.println("--------" + t.getClass().getName());
+		session.save(t.getClass().getName(), t);
+		tx.commit();
+		return (T) "success";
 	}
 
 }

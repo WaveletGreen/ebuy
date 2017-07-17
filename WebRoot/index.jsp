@@ -31,7 +31,7 @@
 				<a href="#"> <s:property value="user.username" />
 				</a>
 			</s:else>
-			<a href="common_CommentCommon_getUserComment_comment_error.action?page.pageIndex=0&page.maxResult=5">留言</a>
+			<a href="common_CommentCommon_getUserComment_comment_error.action?page.pageIndex=1&page.maxResult=5">留言</a>
 		</div>
 		<div class="navbar">
 			<ul class="clearfix">
@@ -146,7 +146,7 @@
 			<div class="price-off">
 				<h2>
 					<a
-						href="common_ProductCommon_viewByPage_product-list_error.action?type=TProduct&page.pageIndex=0&page.maxResult=12">今日特价</a>
+						href="common_ProductCommon_viewByPage_product-list_error.action?type=TProduct&page.pageIndex=1&page.maxResult=12">今日特价</a>
 				</h2>
 				<ul class="product clearfix">
 					<s:iterator value="products" var="p">

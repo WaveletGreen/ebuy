@@ -11,7 +11,8 @@ public class Page {
 	public Page() {
 	}
 
-	public Page(int pageIndex, int totalPages, int prePageIndex, int nextPageIndex) {
+	public Page(int pageIndex, int totalPages, int prePageIndex,
+			int nextPageIndex) {
 	}
 
 	public int getMaxResult() {
@@ -74,8 +75,8 @@ public class Page {
 		this.totalPages = totalPages;
 		this.prePageIndex = pageIndex - 1;
 
-		if (this.prePageIndex+1 <= 0) {
-			this.prePageIndex = pageIndex;
+		if (this.prePageIndex  <= 0) {
+			this.prePageIndex = 1;
 		}
 		this.nextPageIndex = pageIndex + 1;
 		if (this.nextPageIndex > totalPages) {

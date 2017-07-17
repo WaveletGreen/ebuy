@@ -39,7 +39,8 @@ public interface ProductDao<T> {
 	public List<T> getByPage(T t, int startPage, int maxResult);
 
 	/**
-	 * 根据商品的标签返回商品列表，很明确的是根据查询条件查询数据库，因此至少有一个标签，hot,bigTypeId,smallTypeId或specialPrice
+	 * 根据商品的标签返回商品列表，很明确的是根据查询条件查询数据库，因此至少有一个标签，hot,bigTypeId,
+	 * smallTypeId或specialPrice
 	 * 
 	 * @param product
 	 *            传递数据的对象
@@ -50,4 +51,13 @@ public interface ProductDao<T> {
 	 * @return
 	 */
 	public List<TProduct> getByTags(TProduct product, int start, int maxResult);
+
+	/**
+	 * 根据类型保存一个对象
+	 * 
+	 * @param t
+	 *            需要保存的对象
+	 * @return
+	 */
+	public T save(T t);
 }

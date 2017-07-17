@@ -150,7 +150,6 @@
 					<s:property value="page.totalPages" />
 					<s:property value="page.pageIndex" />
 					<s:property value="page.nextPageIndex" />
-
 					<ul class="clearfix">
 						<!-- 					上一页 -->
 						<s:if test="page.prePageIndex!=page.pageIndex">
@@ -159,34 +158,34 @@
 							</li>
 						</s:if>
 						<!-- 						上上一页 -->
-						<s:if test="page.pageIndex-1>0">
+						<s:if test="page.prePageIndex-1>0">
 							<li><a
 								href="common_CommentCommon_getUserComment_comment_error.action?page.pageIndex=<s:property value="page.prePageIndex-1"/>&page.maxResult=5"><s:property
-										value="page.pageIndex-1" /> </a>
+										value="page.prePageIndex-1" /> </a>
 							</li>
 						</s:if>
 						<!-- 						上一页 -->
-						<s:if test="page.pageIndex-1>=0">
+						<s:if test="page.pageIndex-1>0">
 							<li><a
 								href="common_CommentCommon_getUserComment_comment_error.action?page.pageIndex=<s:property value="page.prePageIndex"/>&page.maxResult=5"><s:property
-										value="page.pageIndex" /> </a>
+										value="page.prePageIndex" /> </a>
 							</li>
 						</s:if>
 						<!-- 						当前页 -->
-						<li class="current"><s:property value="page.pageIndex+1" />
+						<li class="current"><s:property value="page.pageIndex" />
 						</li>
 						<!-- 						下一页 -->
 						<s:if test="page.pageIndex+1<=page.totalPages">
 							<li><a
 								href="common_CommentCommon_getUserComment_comment_error.action?page.pageIndex=<s:property value="page.nextPageIndex"/>&page.maxResult=5"><s:property
-										value="page.nextPageIndex+1" /> </a>
+										value="page.nextPageIndex" /> </a>
 							</li>
 						</s:if>
 						<!-- 						下下一页 -->
 						<s:if test="page.pageIndex+1<page.totalPages">
 							<li><a
 								href="common_CommentCommon_getUserComment_comment_error.action?page.pageIndex=<s:property value="page.nextPageIndex+1"/>&page.maxResult=5"><s:property
-										value="page.nextPageIndex+2" /> </a>
+										value="page.nextPageIndex+1" /> </a>
 							</li>
 						</s:if>
 						<!-- 						下一页 -->
@@ -196,21 +195,25 @@
 							</li>
 						</s:if>
 					</ul>
+
 				</div>
 				<div id="reply-box">
-					<form>
+					<form
+						action="common_CommentCommon_publishComment_comment_error.action?page.pageIndex=1&page.maxResult=5"
+						method="post">
 						<table>
 							<tr>
 								<td class="field">昵称：</td>
-								<td><input class="text" type="text" name="guestName" /></td>
+								<td><input class="text" type="text" name="comment.nickName" />
+								</td>
 							</tr>
 							<tr>
 								<td class="field">留言标题：</td>
-								<td><input class="text" type="text" name="guestTitle" /></td>
+								<td><input class="text" type="text" name="title" /></td>
 							</tr>
 							<tr>
 								<td class="field">留言内容：</td>
-								<td><textarea name="guestContent"></textarea></td>
+								<td><textarea name="comment.content"></textarea></td>
 							</tr>
 							<tr>
 								<td></td>

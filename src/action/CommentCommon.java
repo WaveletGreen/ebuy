@@ -22,8 +22,17 @@ public class CommentCommon extends ActionSupport {
 	private static final long serialVersionUID = -3080157913290045286L;
 	ProductDao dao = new ProductDaoImpl();
 	private List<TComment> comments;
+	private TComment comment;
 	private Page page;
 	private int maxResult;
+
+	public TComment getComment() {
+		return comment;
+	}
+
+	public void setComment(TComment comment) {
+		this.comment = comment;
+	}
 
 	public Page getPage() {
 		return page;
@@ -54,4 +63,9 @@ public class CommentCommon extends ActionSupport {
 		return SUCCESS;
 	}
 
+	public String publishComment() {
+		String result = (String) dao.save(comment);
+		getUserComment();
+		return result;
+	}
 }
