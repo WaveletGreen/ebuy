@@ -76,7 +76,7 @@
 					<p>恭喜：注册成功！</p>
 					<p>正在进入首页...</p>
 					<script type="text/javascript">
-						setTimeout("location.href='index.jsp'", 800);
+						setTimeout("location.href='index.html'", 800);
 					</script>
 				</div>
 			</div>

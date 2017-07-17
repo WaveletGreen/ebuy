@@ -8,6 +8,12 @@ import dao.UserDao;
 
 import entity.TUser;
 
+/**
+ * 简单实现用户登录注册功能
+ * 
+ * @author Administrator
+ * 
+ */
 public class UserCommon extends ActionSupport {
 
 	private static final long serialVersionUID = 2939523652393343997L;

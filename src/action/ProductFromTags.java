@@ -10,10 +10,10 @@ import entity.TProduct;
 import impl.ProductDaoImpl;
 
 /**
- * 根据商品的类别选取商品列表
+ * 根据商品的类别(tags)选取商品列表，应该重新到一个页面中而不是product-list.jap
  * 
  * @author Administrator
- *
+ * 
  */
 public class ProductFromTags extends ActionSupport {
 	/**
@@ -53,11 +53,12 @@ public class ProductFromTags extends ActionSupport {
 
 	public String getByTags() {
 		System.out.println(this.product.getTBigtype().getId());
-		products = dao.getByTags(this.product, page.getPageIndex(), page.getMaxResult());
+		products = dao.getByTags(this.product, page.getPageIndex(),
+				page.getMaxResult());
 		maxResult = products.size();
-		System.out.println("-----------"+maxResult);
-		int maxPage = maxResult % page.getMaxResult() == 0 ? maxResult / page.getMaxResult()
-				: maxResult / page.getMaxResult() + 1;
+		System.out.println("-----------" + maxResult);
+		int maxPage = maxResult % page.getMaxResult() == 0 ? maxResult
+				/ page.getMaxResult() : maxResult / page.getMaxResult() + 1;
 		// 在这里设置page的属性是为了方便在页面上控制分页查询
 		page.autoSetter(page.getPageIndex(), maxPage);
 		return SUCCESS;

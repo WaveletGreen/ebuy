@@ -12,6 +12,12 @@ import entity.TNews;
 import entity.TNotice;
 import entity.TProduct;
 
+/**
+ * 一个查询商品列表的通用类
+ * 
+ * @author Administrator
+ * 
+ */
 @SuppressWarnings({ "unchecked", "serial" })
 public class ProductCommon extends ActionSupport {
 	@SuppressWarnings("rawtypes")
@@ -85,8 +91,8 @@ public class ProductCommon extends ActionSupport {
 	public String viewByPage() {
 		int maxPage = 0;
 		SimpleFactory();
-		maxPage = maxResult % page.getMaxResult() == 0 ? maxResult / page.getMaxResult()
-				: maxResult / page.getMaxResult() + 1;
+		maxPage = maxResult % page.getMaxResult() == 0 ? maxResult
+				/ page.getMaxResult() : maxResult / page.getMaxResult() + 1;
 		// 在这里设置page的属性是为了方便在页面上控制分页查询
 		page.autoSetter(page.getPageIndex(), maxPage);
 		SimpleFactoryByPage(type, page.getPageIndex(), page.getMaxResult());
