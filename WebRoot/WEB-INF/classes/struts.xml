@@ -25,4 +25,10 @@
 			</result>
 		</action>
 	</package>
+	<package name="ajax" namespace="/json" extends="json-default">
+		<action name="ajaxReq" class="action.ChatRoom" method="publish">
+			<result type="json">
+			</result>
+		</action>
+	</package>
 </struts>    
