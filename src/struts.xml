@@ -28,6 +28,8 @@
 	<package name="ajax" namespace="/json" extends="json-default">
 		<action name="ajaxReq" class="action.ChatRoom" method="publish">
 			<result type="json">
+				<!-- result是action中设置的变量名，也是页面需要返回的数据，该变量必须有setter和getter方法 -->
+				<param name="root">msg</param>
 			</result>
 		</action>
 	</package>

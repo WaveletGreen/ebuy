@@ -1,22 +1,20 @@
 package action;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletResponse;
+import net.sf.json.JSONObject;
 
-import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.interceptor.ApplicationAware;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-import net.sf.json.JSONObject;
 
-public class ChatRoom extends ActionSupport implements ApplicationAware, SessionAware {
+public class ChatRoom extends ActionSupport implements ApplicationAware,
+		SessionAware {
+	private static final long serialVersionUID = 2100929331366765350L;
 	private Map<String, Object> session;
 	private Map<String, Object> application;
 	private String timed;
@@ -65,11 +63,18 @@ public class ChatRoom extends ActionSupport implements ApplicationAware, Session
 
 	public String publish() throws IOException {
 		System.out.println("--------" + timed);
-		Map<String, String> msg = new HashMap<String, String>();
-		msg.put("gg", "gl");
-		msg.put("1", "55");
-		msg.put("2", "88");
-		// jsonObject = JSONObject.fromObject(msg);
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("gg", "gl");
+		map.put("1", "55");
+		map.put("2", "88");
+		try {
+			jsonObject = new JSONObject();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		this.msg = jsonObject.toString();
+		System.out.println(this.msg);
 		// // HttpServletResponse response = ServletActionContext.getResponse();
 		// // response.setCharacterEncoding("UTF-8");
 		// // response.getWriter().print(jsonObject);
