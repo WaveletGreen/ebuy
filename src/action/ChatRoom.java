@@ -68,7 +68,8 @@ public class ChatRoom extends ActionSupport implements ApplicationAware,
 		map.put("1", "55");
 		map.put("2", "88");
 		try {
-			jsonObject = new JSONObject();
+			jsonObject = JSONObject.fromObject(map);
+			Thread.sleep(2000);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

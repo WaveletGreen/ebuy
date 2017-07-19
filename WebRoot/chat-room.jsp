@@ -37,7 +37,6 @@
 					}
 				},
 				success : function(data, textStatus) {
-					alert(data);
 					$("#state").append("[state: " + textStatus + ", ----------data: { " + data + "} ]<br/>");
 					if (textStatus == "success") { // 请求成功
 						longPolling();
