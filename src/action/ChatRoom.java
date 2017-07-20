@@ -199,7 +199,10 @@ public class ChatRoom extends ActionSupport implements ApplicationAware, Session
 	}
 
 	/**
-	 * 计时任务，没五分钟完成一次写入数据库，谁来通知呢？
+	 * 计时任务，没五分钟完成一次写入数据库，谁来通知启动这个计时任务呢？但是不是不能因为个别用户第一次访问聊天室的时候调用写入方法
+	 * 
+	 * ，因此需要将用户的index设为appIndex，即第一次访问聊天室之后要设置用户聊天历史所用为服务器当前历史聊天的最大值-1，
+	 * 这部分内容需要在jsp页面上写标记，并且在初始化的时候标记为appIndex最大值
 	 */
 	private static void ticker() {
 		Timer timer = new Timer();
@@ -228,6 +231,6 @@ public class ChatRoom extends ActionSupport implements ApplicationAware, Session
 					System.out.println("--------写入数据库后的数值---------" + contents.size());
 				}
 			}
-		}, 1000 * 20 );
+		}, 1000 * 20);
 	}
 }
