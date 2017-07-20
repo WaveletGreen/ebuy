@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.interceptor.ApplicationAware;
 import org.apache.struts2.interceptor.SessionAware;
 
@@ -23,8 +25,7 @@ import entity.TUser;
  * @author Administrator
  * 
  */
-public class UserCommon extends ActionSupport implements ApplicationAware,
-		SessionAware {
+public class UserCommon extends ActionSupport implements ApplicationAware, SessionAware {
 	private Map<String, Object> session;
 	private Map<String, Object> application;
 	private static final long serialVersionUID = 2939523652393343997L;
@@ -83,13 +84,17 @@ public class UserCommon extends ActionSupport implements ApplicationAware,
 	}
 
 	public String logout() {
+		HttpSession session = ((HttpServletRequest) ServletActionContext.getRequest()).getSession();
 		if (session != null) {
 			if (application != null) {
-				((List<TUser>) application.get("userList")).remove(session
-						.get("user"));
+				List<TUser> userList = (List<TUser>) application.get("userList");
+				if (userList != null) {
+					userList.remove(session.getAttribute("user"));
+					application.put("userList", userList);
+				}
 			}
-			((HttpSession) session).invalidate();
 		}
+		session.invalidate();
 		return SUCCESS;
 	}
 

@@ -2,8 +2,7 @@
 <%@taglib prefix="s" uri="/struts-tags"%>
 <%
 	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://"
-			+ request.getServerName() + ":" + request.getServerPort()
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 %>
 
@@ -16,6 +15,13 @@
 <title>易买网 - 登录</title>
 <link type="text/css" rel="stylesheet" href="css/style.css" />
 <script type="text/javascript" src="scripts/function.js"></script>
+<style type="text/css">
+.errorMessage {
+	color: red;
+	list-style: none;
+	text-align: center;
+}
+</style>
 </head>
 
 <body>
@@ -56,7 +62,7 @@
 				<li><a href="#">婴幼奶粉</a></li>
 				<li><a href="#">饰品</a></li>
 				<li class="last"><a href="#">Investor Relations</a></li>
-			</ul> 
+			</ul>
 		</div>
 	</div>
 	<div id="register" class="wrap">
@@ -68,7 +74,9 @@
 					action="common_UserCommon_login_index_login.action"
 					onsubmit="return checkForm(this)">
 					<table>
-						<s:fielderror name="msg"></s:fielderror>
+						<div>
+							<s:fielderror name="msg"></s:fielderror>
+						</div>
 						<tr>
 							<td class="field">用户名：</td>
 							<td><input class="text" type="text" name="user.username"

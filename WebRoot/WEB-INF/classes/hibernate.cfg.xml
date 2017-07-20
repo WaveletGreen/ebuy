@@ -6,11 +6,17 @@
 <hibernate-configuration>
 
 	<session-factory>
-		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
-		<property name="connection.url">jdbc:mysql://localhost:3306/ebuy</property>
+		<property name="dialect">
+			org.hibernate.dialect.MySQLDialect
+		</property>
+		<property name="connection.url">
+			jdbc:mysql://localhost:3306/ebuy
+		</property>
 		<property name="connection.username">root</property>
-		<property name="connection.password">bingte</property>
-		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.password">1243093769llc</property>
+		<property name="connection.driver_class">
+			com.mysql.jdbc.Driver
+		</property>
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
 		<property name="myeclipse.connection.profile">ebuy</property>
@@ -24,6 +30,7 @@
 		<mapping resource="entity/TNotice.hbm.xml" />
 		<mapping resource="entity/TOrderProduct.hbm.xml" />
 		<mapping resource="entity/TTag.hbm.xml" />
+		<mapping resource="entity/ChatContent.hbm.xml" />
 
 	</session-factory>
 

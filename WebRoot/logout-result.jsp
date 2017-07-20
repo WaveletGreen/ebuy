@@ -28,7 +28,7 @@
 			<img src="images/logo.gif" />
 		</div>
 		<div class="help">
-			<a href="#" class="shopping">购物车</a><a href="login.jsp">登录</a><a
+			<a href="#" class="shopping">购物车</a><a href="login.html">登录</a><a
 				href="register.html">注册</a><a href="guestbook.html">留言</a>
 		</div>
 		<div class="navbar">
@@ -73,10 +73,10 @@
 					<li class="last-current"><em></em>注册成功</li>
 				</ul>
 				<div class="msg">
-					<p>恭喜：注册成功！</p>
+					<p>注销成功！3秒后返回首页</p>
 					<p>正在进入首页...</p>
 					<script type="text/javascript">
-						setTimeout("location.href='index.html'", 800);
+						setTimeout("location.href='index.html'", 3000);
 					</script>
 				</div>
 			</div>

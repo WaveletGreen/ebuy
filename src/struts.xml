@@ -6,6 +6,9 @@
 			<result name="error">
 				/error.jsp
 			</result>
+			<result name="toIndex">
+				/index.html
+			</result>
 		</global-results>
 		<!-- 初始化工作 -->
 		<action name="init" class="action.ProductCommon" method="init">
@@ -20,13 +23,10 @@
 			<result name="input">
 				/{4}.jsp
 			</result>
-			<result name="toIndex">
-				/index.html
-			</result>
 		</action>
 	</package>
 	<package name="ajax" namespace="/json" extends="json-default">
-		<action name="ajaxReq" class="action.ChatRoom" method="publish">
+		<action name="ajaxReq_*" class="action.ChatRoom" method="{1}">
 			<result type="json">
 				<!-- result是action中设置的变量名，也是页面需要返回的数据，该变量必须有setter和getter方法 -->
 				<param name="root">msg</param>

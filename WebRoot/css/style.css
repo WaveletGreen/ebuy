@@ -167,7 +167,7 @@ ul.product li dl dd.price { color:#c30; font-weight:bold; }
 #chat-room .lefter h2 { background:#fafafa; border-bottom:1px solid #eee; font-size:14px; line-height:24px; text-align:center; }
 #chat-room .lefter ul li { line-height:24px; padding:10px; }
 #chat-room .lefter ul li a{ display:block; background:url(../images/bg.png) -231px -152px no-repeat; padding-left:20px; }
-#chat-room .righter { float:right; width:445px; display:inline; margin:5px; }
+#chat-room .righter { float:left; width:70%; display:inline; margin:5px; }
 #chat-room .righter #history { height:320px; border:1px solid #ccc; padding:5px; overflow-y:scroll; }
 #chat-room .righter .reply .text { border:1px solid #ccc; width:380px; margin-right:5px; padding:4px; vertical-align:middle; }
 #chat-room .righter .reply label { vertical-align:middle; }

@@ -23,7 +23,7 @@
 			<img src="images/logo.gif" />
 		</div>
 		<div class="help">
-
+			<s:property value="#session.user.username" />
 			<a href="#" class="shopping">购物车</a>
 			<s:if test="#session.user==null">
 				<a href="login.jsp">登录</a>
@@ -32,62 +32,42 @@
 			<s:else>
 			欢迎
 			<s:property value="#session.user.username" />
-			<a href="common_UserCommon_logout_index_index.action">注销</a>
+				<a href="common_UserCommon_logout_logout-result_index.action">注销</a>
 			</s:else>
 			<a
 				href="common_CommentCommon_getUserComment_comment_error.action?page.pageIndex=1&page.maxResult=5">留言</a>
 		</div>
 		<div class="navbar">
 			<ul class="clearfix">
-				<li class="current"><a href="#">首页</a>
-				</li>
-				<li><a href="#">图书</a>
-				</li>
-				<li><a href="#">百货</a>
-				</li>
-				<li><a href="#">品牌</a>
-				</li>
-				<li><a href="#">促销</a>
-				</li>
+				<li class="current"><a href="#">首页</a></li>
+				<li><a href="#">图书</a></li>
+				<li><a href="#">百货</a></li>
+				<li><a href="#">品牌</a></li>
+				<li><a href="#">促销</a></li>
 			</ul>
 		</div>
 	</div>
 	<div id="childNav">
 		<div class="wrap">
 			<ul class="clearfix">
-				<li class="first"><a href="#">音乐</a>
-				</li>
-				<li><a href="#">影视</a>
-				</li>
-				<li><a href="#">少儿</a>
-				</li>
-				<li><a href="#">动漫</a>
-				</li>
-				<li><a href="#">小说</a>
-				</li>
-				<li><a href="#">外语</a>
-				</li>
+				<li class="first"><a href="#">音乐</a></li>
+				<li><a href="#">影视</a></li>
+				<li><a href="#">少儿</a></li>
+				<li><a href="#">动漫</a></li>
+				<li><a href="#">小说</a></li>
+				<li><a href="#">外语</a></li>
 				<li><a
 					href="common_ProductFromTags_getByTags_product-list_error.action?product.TBigtype.id=2&page.pageIndex=0&page.maxResult=12">数码相机</a>
 				</li>
-				<li><a href="#">笔记本</a>
-				</li>
-				<li><a href="#">羽绒服</a>
-				</li>
-				<li><a href="#">秋冬靴</a>
-				</li>
-				<li><a href="#">运动鞋</a>
-				</li>
-				<li><a href="#">美容护肤</a>
-				</li>
-				<li><a href="#">家纺用品</a>
-				</li>
-				<li><a href="#">婴幼奶粉</a>
-				</li>
-				<li><a href="#">饰品</a>
-				</li>
-				<li class="last"><a href="#">Investor Relations</a>
-				</li>
+				<li><a href="#">笔记本</a></li>
+				<li><a href="#">羽绒服</a></li>
+				<li><a href="#">秋冬靴</a></li>
+				<li><a href="#">运动鞋</a></li>
+				<li><a href="#">美容护肤</a></li>
+				<li><a href="#">家纺用品</a></li>
+				<li><a href="#">婴幼奶粉</a></li>
+				<li><a href="#">饰品</a></li>
+				<li class="last"><a href="#">Investor Relations</a></li>
 			</ul>
 		</div>
 	</div>
@@ -193,7 +173,8 @@
 										￥
 										<s:property value="#p.price" />
 									</dd>
-								</dl></li>
+								</dl>
+							</li>
 						</s:if>
 					</s:iterator>
 				</ul>
@@ -204,8 +185,7 @@
 					<ul>
 						<s:iterator value="notices" var="no" begin="0" end="6" step="1">
 							<li><a href="#" target="_blank"><s:property
-										value="#no.title" /> </a>
-							</li>
+										value="#no.title" /> </a></li>
 						</s:iterator>
 					</ul>
 				</div>
@@ -215,8 +195,7 @@
 					<ul>
 						<s:iterator value="news" var="n" begin="0" end="6" step="1">
 							<li><a href="#" target="_blank"><s:property
-										value="#n.title" /> </a>
-							</li>
+										value="#n.title" /> </a></li>
 						</s:iterator>
 					</ul>
 				</div>
@@ -244,7 +223,8 @@
 										￥
 										<s:property value="#p.price" />
 									</dd>
-								</dl></li>
+								</dl>
+							</li>
 						</s:if>
 					</s:iterator>
 				</ul>
